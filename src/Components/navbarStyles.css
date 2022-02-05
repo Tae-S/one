@@ -1,0 +1,135 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.navbar-ul{
+    position: fixed;
+    width:100vw;
+    padding:20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar-li{
+    list-style-type: none;
+    /* border:1px solid yellow; */
+    position: relative;
+    font-size: 1.19em;
+    letter-spacing: 0.05em;
+    z-index:2;
+    padding:0.5em;
+}
+
+:root{
+    --op1:0;
+    --op2:0;
+    --op3:0;
+    --op4:0;
+
+    --dur1:0s;
+    --dur2:0s;
+    --dur3:0s;
+    --dur4:0s;
+    
+}
+
+
+@keyframes squiggle-anim{
+    0%{filter:url(#squiggle1);}
+    20%{filter:url(#squiggle2);}
+    40%{filter:url(#squiggle3);}
+    60%{filter:url(#squiggle4);}
+    80%{filter:url(#squiggle5);}
+    95%{filter:url(#squiggle6);}
+}
+
+.navbar-li:nth-child(1){
+    animation: squiggle-anim var(--dur1) linear infinite alternate;
+    /* filter:url(#squiggle4); */
+}
+.navbar-li:nth-child(2){
+    animation: squiggle-anim var(--dur2) linear infinite alternate;
+}
+.navbar-li:nth-child(3){
+    animation: squiggle-anim var(--dur3) linear infinite alternate;
+}
+.navbar-li:nth-child(4){
+    animation: squiggle-anim var(--dur4) linear infinite alternate;
+}
+.navbar-li:after{
+    position: absolute;
+    content:'Home';
+    top:0;
+    left:0.04em;
+    width:100%;
+    height:100%;
+    color:hotpink;
+    animation:hover-anim 4s infinite cubic-bezier(0.2, -0.18, 0.835, 0.75) alternate;
+    z-index:2;
+    pointer-events: none;
+    padding:0.5em;
+}
+
+
+
+.navbar-li:nth-child(1):after{
+    content:'Home';
+    opacity:var(--op1);
+}
+.navbar-li:nth-child(2):after{
+    content:'Skills';
+    opacity:var(--op2);
+}
+.navbar-li:nth-child(3):after{
+    content:'Contact';
+    opacity:var(--op3);
+}
+.navbar-li:nth-child(4):after{
+    content:'Resume';
+    opacity:var(--op4);
+}
+
+@keyframes hover-anim{
+    0%{clip-path: polygon(15% 11%, 100% 14%, 98% 10%, 39% 100%);}
+    20%{clip-path: polygon(10% 51%, 100% 34%, 89% 70%, 20% 10%);}
+    40%{clip-path: polygon(20% 1%, 60% 19%, 40% 13%, 91% 40%);}
+    60%{clip-path: polygon(22% 1%, 10% 20%, 86% 10%, 29% 10%);}
+    80%{clip-path: polygon(4% 21%, 29% 42%, 28% 90%, 99% 80%);}
+    100%{clip-path: polygon(15% 20%, 90% 14%, 91% 90%, 30% 90%);}
+}
+
+.link{
+    color:rgb(41, 211, 98);
+    font-weight: 700;
+    font-family: 'Comfortaa',cursive;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.res-link{
+    /* border:1px solid yellow; */
+    position: relative;
+}
+
+.res-link:after{
+    content:'Resume_mohit.pdf will be downloaded';
+    font-size: 0.6em;
+    color:cyan;
+    font-weight:300;
+    margin:0 0 0 1em;
+    top:2.5em;
+    width:16em;
+    border-radius: 1em;
+    left:5em;
+    text-align: center;
+    background:rgba(225,235,255,0.1);
+    position: absolute;
+    opacity:var(--op4);
+    
+    /* border:1px solid green; */
+
+}

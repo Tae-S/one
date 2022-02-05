@@ -1,0 +1,263 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container{
+    width:60em;
+    height:41em;
+    margin:auto;
+    margin-top:0;
+    position: relative;
+    top:-6.5em;
+    /* border:1px solid yellow; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info-start{
+    color:greenyellow;
+    margin-bottom: 1em;
+    font-size:1.5em;
+}
+
+.info-name{
+    margin-left:1em;
+    font-size:3em;
+    /* border:1px solid yellow; */
+    padding: 0.5em 1em 0.5em 1em;
+    box-shadow:#000 0px 0px 0px 0px inset,
+    #2c0c50 -6px -5px 12px 5px,
+    #001 4px 4px 16px 4px;
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 1.045);
+    background-image: url('./../imgs/home/bg-sakura.jpg');
+    background-clip: text;
+    color:transparent;
+    font-weight: 700;
+    cursor:none;
+}
+
+.info-name:hover{
+    box-shadow:#001 -6px 6px 12px 1px inset,
+    #2c0c50 -6px 4px 12px 3px,
+    #000 0px 0px 0px 0px;
+    color:tomato;
+}
+.info-name:hover .strong-name{
+    color:tomato;
+}
+
+.strong-name{
+    color:transparent;
+    transition:all 0.5s;
+}
+
+.info-desc{
+    margin-left:8em;
+    margin-top:1em;
+    font-size:1.2em;
+    position: absolute;
+}
+
+.info-desc:after{
+    content:'';
+    position:absolute;
+    width:1em;
+    height: 1.5em;
+    margin-left:-0.75em;
+    top:-0.25em;
+    border-right:2px solid greenyellow;
+    animation: cursor-anim 0.8s infinite alternate steps(2,end);
+    opacity:0;
+}
+
+@keyframes cursor-anim{
+    
+    to{opacity: 1;}
+}
+
+#skills{
+    position: absolute;
+    top:45em;
+    text-align: center;
+}
+
+.skills-container{
+    height:30em;
+    width:60em;
+    /* border:1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* overflow: hidden; */
+}
+
+.skills-title{
+    opacity:0;
+    transition: opacity 0.3s;
+    margin-left:-3em;
+    margin-bottom: 3em;
+    position: relative;
+}
+
+#skills:hover .skills-title{
+    opacity:1;
+}
+#skills:hover .dev-title{
+    opacity:1;
+}
+#skills:hover .design-title{
+    opacity:1;
+}
+#skills:hover .misc-title{
+    opacity:1;
+}
+
+.design-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dev-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.misc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.design{
+    filter:invert(1) grayscale(1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    text-align: center;
+    height:27em;
+    width:10em;
+}
+
+.dev{
+    filter:invert(1) grayscale(1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    /* border:1px solid blue; */
+    height:27em;
+    width:10em;
+}
+
+.misc{
+    filter:invert(1) grayscale(1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    height:27em;
+    width:10em;
+}
+
+
+.design-title{
+    opacity:0;
+    margin-top: 1em;
+    margin-bottom:1em;
+    margin-left: -1em;
+    transition: all 0.3s;
+}
+
+.dev-title{
+    opacity:0;
+    margin-top: 1em;
+    margin-bottom:1em;
+    margin-left: -2.5em;
+    transition: all 0.3s;
+}
+
+.misc-title{
+    opacity:0;
+    margin-top: 1em;
+    margin-bottom:1em;
+    transition: all 0.3s;
+}
+
+.skill-logo{
+    width:3em;
+    margin-top: 1em;
+    margin-right: 2em;
+    cursor:pointer;
+}
+
+
+.dev-container:hover .dev-title{
+    color:greenyellow;
+}
+.design-container:hover .design-title{
+    color:greenyellow;
+}
+.misc-container:hover .misc-title{
+    color:greenyellow;
+}
+/* 
+.skills-title:after{
+    content:'jkgnh';
+    position: absolute;
+    top:-0.25em;
+    width:7em;
+    height:3em;
+    margin-left:2em;
+    border:1px solid yellow;
+    
+} */
+
+.message-box{
+    position:absolute;
+    top:-0.25em;
+    width:20em;
+    height:4em;
+    /* border:1px solid yellow; */
+    color:rgb(255, 141, 47);
+    /* box-shadow:-4px -1px 8px 0px #2c0c50,
+    10px 10px 6px 0px rgb(0, 0, 0); */
+    box-shadow:-6px -4px 15px 3px #2c0c50,
+    6px 6px 10px 5px rgb(15, 15, 15);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-cursor{
+    width:10em;
+    height:10em;
+    /* border:1px solid yellow; */
+    position: absolute;
+    top:0;
+    border-radius: 50%;
+    background:black;
+    mix-blend-mode:soft-light;
+    /* background-blend-mode:lighten; */
+    z-index:-10;
+    opacity:0;
+    animation: squiggley-cursor-anim 0.5s linear infinite alternate;
+    /* filter:url(#squiggley-cursor1); */
+}
+
+@keyframes squiggley-cursor-anim{
+    0%{filter:url(#squiggley-cursor1);}
+    15%{filter:url(#squiggley-cursor2);}
+    35%{filter:url(#squiggley-cursor3);}
+    60%{filter:url(#squiggley-cursor4);}
+    80%{filter:url(#squiggley-cursor5);}
+    100%{filter:url(#squiggley-cursor6);}
+}
