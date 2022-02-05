@@ -1,3 +1,6 @@
+//TODO: z-index of social-icons >=1
+//TODO: contact form height adjustment,px to em
+//TODO: homepage mediaqueries
 // import logo from './logo.svg'
 import {BrowserRouter, Router,Route, Routes} from 'react-router-dom'
 
