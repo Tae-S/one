@@ -3,11 +3,35 @@ import git from './../imgs/social/git.png'
 import google from './../imgs/social/google-one.png'
 import codepen from './../imgs/social/codepen-one.png'
 import whatsapp from './../imgs/social/whatsapp.png'
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import {useLocation} from 'react-router-dom'
 
 function Social()
 {
+    // const [path,setPath] = useState()
+    
+    const history = useLocation()
+    useEffect(()=>{
+        
+        
+        let pathname =history.pathname.split('/').pop()        
+        
+        // setPath(pathname)
+        // console.log(pathname,path)
+        
+        // console.log(pathname,path)
+        document.documentElement.style.setProperty('--social-filter','1')
+        if(pathname === 'contact'){
+            // console.log('here')
+            document.documentElement.style.setProperty('--social-filter','0')
+        }
+        
+            
+        
+        //return ()=>{}
+    },[history])
+    
+
     const onMouseEnter = (indexString)=>{
         if(indexString === 'phone'){
                 document.documentElement.style.setProperty('--social-op-phone','1')                
@@ -31,7 +55,7 @@ function Social()
             <div className='social-container'>
                 <p className='social-title'>Social</p>
                 <div><a href='https://github.com/Tae-S' target='_blank'><img className='logo git' src={git}/></a></div>
-                <div><a href='https://codepen.io/Mc_mc249'><img className='logo codepen' src={codepen}/></a></div>
+                <div><a href='https://codepen.io/Mc_mc249' target='_blank'><img className='logo codepen' src={codepen}/></a></div>
                 <div className='email' onMouseEnter={()=>onMouseEnter('email')} onMouseLeave={()=>onMouseLeave('email')} ><img className='logo google' src={google}/></div>
                 <div className='phone' onMouseEnter={()=>onMouseEnter('phone')} onMouseLeave={()=>onMouseLeave('phone')}><img className='logo whatsapp' src={whatsapp}/></div>
             </div>

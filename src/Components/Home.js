@@ -36,6 +36,9 @@ function Home()
         setTimeout(onDOMContentLoaded,loadingTime+100)
     }
     function onDOMContentLoaded(){
+        //social icon pathname
+        
+        
         //secondarycursor
         const mouse = {x:0,y:0}
         const cursor = document.querySelector('.secondary-cursor')

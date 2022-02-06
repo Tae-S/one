@@ -7,6 +7,7 @@
 :root{
     --social-op-email:0;
     --social-op-phone:0;
+    --social--filter:1;
     /* --social-content-phone:'lol...no.' */
 }
 
@@ -14,7 +15,7 @@
     position: fixed;
     /* top:11.5em; */
     /* bottom:0; */
-    top:20em;
+    top:45vh;
     height:20em;
     width:6em;
     /* border:1px solid yellow; */
@@ -22,6 +23,21 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    z-index:10;
+}
+
+@media screen and (max-width: 770px) and (min-width: 500px) {
+    .social-container{
+        top:48vh;
+        left:-1em;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .social-container{
+        top:52vh;
+        left:-1em;
+    }
 }
 
 .social-title{
@@ -46,7 +62,8 @@
 
 .logo{
     padding:0 0.85em;
-    filter:invert(1);
+    filter:invert(var(--social-filter));
+    /* filter:invert(0); */
     width: 3.8em;
     cursor:pointer;
     transition:all 0.3s cubic-bezier(0.6, -0.78, 0.735, 0.45);

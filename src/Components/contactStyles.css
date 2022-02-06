@@ -18,6 +18,10 @@
     align-items: center;
     justify-content: center;
     height:100vmin;
+    width:100vw;
+    position:absolute;
+    top:0;
+    z-index: -2;
 }
 
 .pop-success{
@@ -47,16 +51,16 @@
 .contact-container{
     background-color: #dcf0f3;
     color:#666;
-    width:40vmin;
-    height: 60vmin;
+    width:15em;
+    height: 25em;
     position: relative;    
-    border-radius:10px;
+    border-radius:1em;
     box-shadow: 10px 10px 20px #cbced1,
     -10px -10px 20px #fff;
 }
 
 .title{
-    margin-top:20px;
+    margin-top:1em;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     text-align: center;
@@ -69,23 +73,23 @@
 }
 
 .field-input{
-    margin:30px 20px 0 20px;
-    padding: 10px;
+    margin:1.875em 1.25em 0 1.25em;
+    padding: 0.625em;
     border: none;
     outline: none;
     background: none;
-    border-radius:8px;
+    border-radius:0.5em;
     box-shadow:inset 8px 8px 8px #cbced1,
     inset -8px -8px 8px #fff;
 }
 
 .message{
-    height:100px;
+    height:8.5em;
     resize:none;
 }
 
 .compliment{
-    margin:40px 20px 0 70px;
+    margin:2.5em 1.25em 0 5em;
     width:50%;
     position: relative;
 }
@@ -116,7 +120,7 @@
 
 .btn{
 
-    padding:5px 15px;
+    padding:0.3125em 1em;
     outline:none;
     border: none;
     cursor: pointer;
