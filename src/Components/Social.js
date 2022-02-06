@@ -9,7 +9,54 @@ import {useLocation} from 'react-router-dom'
 function Social()
 {
     // const [path,setPath] = useState()
-    
+    window.addEventListener('scroll',handleScroll)
+    function handleScroll(){
+        const socialContainer = document.querySelector('.social-container')
+        const socialArrow = document.querySelector('.social-arrow')
+        if(window.scrollY > 5){
+            // console.log('here')
+            
+
+            socialContainer.style.transform = 'translateX(-10em)'
+            socialContainer.style.opacity = '0'
+            socialArrow.style.transform = 'translateX(-2em)'
+
+            document.documentElement.style.setProperty('--social-arrow-dir','1')
+
+        }
+        else{
+            socialContainer.style.opacity = '1'
+            socialContainer.style.transform = 'none'
+            socialArrow.style.transform = 'scaleX(-1) translateX(0em)'
+
+            document.documentElement.style.setProperty('--social-arrow-dir','-1')
+        }
+    }
+    if(window.matchMedia("(any-pointer: coarse)").matches) {
+        console.log('touch device')
+    }else{
+        console.log('mouse/trackpad is being used')
+        window.removeEventListener('scroll',handleScroll)
+    }
+    const onClick = ()=>{
+        const socialContainer = document.querySelector('.social-container')
+        const socialArrow = document.querySelector('.social-arrow')
+        let arrowDir = document.documentElement.style.getPropertyValue('--social-arrow-dir')
+        if(arrowDir === '-1'){
+            socialContainer.style.transform = 'translateX(-10em)'
+            socialContainer.style.opacity = '0'
+            socialArrow.style.transform = 'translateX(-2em)'
+            document.documentElement.style.setProperty('--social-arrow-dir','1')
+
+        }
+        else{
+            socialContainer.style.opacity = '1'
+            socialContainer.style.transform = 'none'
+            socialArrow.style.transform = 'scaleX(-1) translateX(0em)'
+
+            document.documentElement.style.setProperty('--social-arrow-dir','-1')
+        }
+    }
     const history = useLocation()
     useEffect(()=>{
         
@@ -52,6 +99,7 @@ function Social()
 
     return(
         <>
+            <div onClick={()=>onClick()} className='social-arrow'></div>
             <div className='social-container'>
                 <p className='social-title'>Social</p>
                 <div><a href='https://github.com/Tae-S' target='_blank'><img className='logo git' src={git}/></a></div>

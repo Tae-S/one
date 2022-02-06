@@ -12,14 +12,16 @@ function Contact()
         setLoading(false)
         clearTimeout(id)
     },Math.random()*6000)
-    const [popsv,setPopsv] = useState(false)
-    const [popfv,setPopfv] = useState(false)
+    const [popsv,setPopsv] = useState(false) //sent!
+    const [poplv,setPoplv] = useState(false) //sending...
+    const [popfv,setPopfv] = useState(false) //failed :(
     const [content,setContent] = useState({
         email : '',
         message : ''
     })
     const onSubmit = (e)=>{
         e.preventDefault()
+        setPoplv(true)
         send(
             'service_2b4wgnh',
             'template_of2rh7h',
@@ -28,6 +30,7 @@ function Contact()
         )
         .then((res)=>{
             console.log('Successfully sent!')
+            setPoplv(false)
             setPopsv(true)
             const id = setTimeout(()=>{
                 setPopsv((prevState)=>!prevState)
@@ -36,6 +39,7 @@ function Contact()
         })
         .catch((err)=>{
             console.log('Could not send.', err )
+            setPoplv(false)
             setPopfv(true)
             const id = setTimeout(()=>{
                 setPopfv((prevState)=>!prevState)
@@ -49,6 +53,7 @@ function Contact()
     }
 
     const onClick = (e)=>{
+        setPoplv(true)
         setContent({
             email : 'Anonymous',
             message : 'Great work here!'
@@ -61,6 +66,7 @@ function Contact()
         )
         .then((res)=>{
             console.log('Successfully sent!')
+            setPoplv(false)
             setPopsv(true)
             const id = setTimeout(()=>{
                 setPopsv((prevState)=>!prevState)
@@ -69,6 +75,7 @@ function Contact()
         })
         .catch((err)=>{
             console.log('Could not send.', err )
+            setPoplv(false)
             setPopfv(true)
             const id = setTimeout(()=>{
                 setPopfv((prevState)=>!prevState)
@@ -86,6 +93,7 @@ function Contact()
         :
         <>
             <div className='pop-success' style={{'visibility':popsv?'visible':'hidden'}}>Message sent!</div>
+            <div className='pop-sending' style={{'visibility':poplv?'visible':'hidden'}}>Sending<span> . . . </span></div>
             <div className='pop-failure' style={{'visibility':popfv?'visibile':'hidden'}}>Message could not be sent. Please reach out to mohitc.bits@gmail.com</div>
             <div className='body'>
                 <div className='contact-container'>

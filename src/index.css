@@ -2,6 +2,34 @@ html{
   scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar{
+  width: 0.5em;
+  height:0.5em;
+}
+
+
+html::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.5);
+  width:0.5em;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: rgba(25,25,25,0.7);
+  border-radius: 0.4em;
+  
+}
+
+html::-webkit-scrollbar-button{
+  display: none;
+  background: rgba(255,255,255,0.5);
+}
+
+html::-webkit-scrollbar-corner{
+  background: rgba(255,255,255,0.5);
+}
+
+
+
 body {
   margin: 0;
   background-color:#1e0838;

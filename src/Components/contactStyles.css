@@ -35,6 +35,17 @@
     left:0;
     width:100%;
 }
+.pop-sending{
+    background-color: #3e67ec;
+    color:rgb(191, 166, 216);
+    padding:1px;
+    text-align: center;
+    
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
 .pop-failure{
     background-color: #f15858;
     color:#edf;
@@ -47,6 +58,31 @@
     
 }
 
+.pop-sending > span{
+    /* border:1px solid black; */
+    color:rgb(191, 166, 216);
+    display: inline-block;
+    animation: sending-anim 0.5s linear infinite forwards;
+}
+@keyframes sending-anim{
+    0%{
+        clip-path: polygon(0 0, 65% 0, 65% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 0, 30% 0, 30% 100%, 0% 100%);
+    }
+    80%{
+        clip-path: polygon(0 0, 2% 0, 2% 100%, 0% 100%);
+    }
+}
+
+@media (pointer:coarse){
+    .body{
+        height:100vh;
+        width:100vw;
+        top:0rem;
+    }
+}
 
 .contact-container{
     background-color: #dcf0f3;
