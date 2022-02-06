@@ -1,6 +1,7 @@
 // z-index of social-icons >=1
 // contact form height adjustment,px to em
-//TODO: homepage mediaqueries
+//TODO: homepage mediaqueries 50% remaining
+//TODO: hide social icons with > prompt to open it // like an aside for screen sizes upto incl. 499px
 // import logo from './logo.svg'
 import {BrowserRouter, Router,Route, Routes} from 'react-router-dom'
 
