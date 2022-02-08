@@ -13,7 +13,7 @@ function Social()
     function handleScroll(){
         const socialContainer = document.querySelector('.social-container')
         const socialArrow = document.querySelector('.social-arrow')
-        if(window.scrollY > 5){
+        if(window.scrollY > 2){
             // console.log('here')
             
 

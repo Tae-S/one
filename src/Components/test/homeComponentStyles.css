@@ -173,13 +173,13 @@
 
 @media screen and (max-width: 499px) {
     .component-container{
-        top:80%;
+        top:60%;
         left:80%;
         /* border:1px solid black; */
     }
     .dial-text{
-        top:75%;
-        left:72.5%;
+        top:55%;
+        left:73.5%;
         /* border:1px solid yellow; */
     }
 }
