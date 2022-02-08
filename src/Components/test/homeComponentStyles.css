@@ -1,0 +1,185 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --oldAngle:0;
+    --dial-one:rgb(46, 16, 82);
+    --dial-two:rgb(25, 7, 46);/*-5,-1,-10*/
+    --item-one:rgb(0, 0, 0);/*-30,-8,-56*/
+    --item-four:rgb(39, 10, 73);/*30,8,56 +9,+2,17*/
+
+    --swatch-one:rgb(59, 22, 105);/*+29,+14,49*/
+    --swatch-two:rgb(46, 16, 82);/*+16,+8,+26*/
+    --swatch-four:rgb(19, 4, 34);/*-11,-4,-22*/
+    --swatch-bg:rgb(30, 8, 56);
+    --swatch-1:#000;
+}
+
+.component-container{
+    width:10em;
+    height:10em;
+    position:absolute;
+    top:75%;
+    left:90%;
+    transform: translate(-50%,-50%);
+    /* border:1px solid yellow; */
+    z-index:5;
+    
+}
+
+
+
+.test-item{
+    width:100%;
+    height: 100%;
+    /* border:2px solid green; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 20px var(--item-one) inset,/*#000*/
+    3px 5px 5px 2px var(--item-one),
+    -1px -2px 5px 3px var(--item-one),
+    -7px -2px 8px 12px var(--item-four);/*#270a49*/
+    transition: all 0.2s;
+    /* box-shadow: 
+    
+    2px 12px 12px 3px #999,
+    -3px -2px 8px 4px #bbb,
+    0px -15px 15px 6px #fff,
+    -10px 0px 15px 6px #fff,
+    0px 20px 15px 6px #fff,
+    0px 20px 15px 14px #ccc,
+    10px 20px 2px 8px #ccc; */
+}
+
+.dial{
+    width:100%;
+    height: 100%;
+    /* border:2px solid hotpink; */
+    border-radius: 50%;
+    /* box-shadow: 1px 3px 3px 0px #fff inset;  */
+    /* 0px -1px 5px 2px #ccc inset, */
+    /* 0px -5px 8px 2px #aaa inset, */
+    
+    /* 0px 1px 4px 3px #777,
+    0px 10px 10px 2px #fff inset; */
+    
+    /* background:#1e0838; */
+    background:rgb(30, 8, 56);
+    box-shadow: 0px 3px 3px 1px var(--dial-one) inset,/*#2e1052*/
+    0px 3px 3px 1px var(--dial-two) inset,; /*#19072e*/
+    /* box-shadow:0px 2px 2px 2px #fff inset,
+    0px -2px 2px 2px #aaa inset;; 
+    background:#ddd; */
+    transition: all 0.2s;
+    cursor:pointer;
+}
+
+.dial-text{
+    display:inline-block;
+    position:absolute;
+    top:70%;
+    left:88.125%;
+    z-index:30;
+    font-size:1.2em;
+    transform:translate(0%,5%);
+    cursor:pointer;
+    /* border:1px solid yellow; */
+}
+
+
+.swatch{
+    width:20%;
+    height: 20%;
+    position:relative;
+    top:63%;
+    left:16%;
+    /* border:2px solid green; */
+    border-radius: 50%;
+    /* box-shadow:-3px -2px 8px 15px #2c0c50 inset; */
+     background:var(--swatch-bg);/*#1e0838*/
+    box-shadow: 0px 2px 20px 1px var(--swatch-1) inset,/*#000*/
+    0px -8px 16px 2px var(--swatch-two) inset,/*#2e1052*/
+    0px -8px 24px 3px var(--swatch-one) inset,/*#3b1669*/
+    0px 0px 0px 0px var(--swatch-four),/*#130422*/
+    0px 0px 0px 0px var(--swatch-two);/*#2e1052*/
+    transition: all 0.2s;
+    /* 0px 0px 8px 1px #2e1052; */
+    /* background:#eee;
+    box-shadow:
+    /* -2px -2px 4px 2px #eee, */
+    /* 0px -2px 8px 1px #fff inset,
+    0px -12px 15px 1px #ddd inset,
+    0px 12px 22px 2px #999 inset; */
+}
+
+
+.test-item-mouse-down{
+    box-shadow: 0px 0px 20px 1px var(--item-one) inset,/*#000*/
+    1px 2px 5px 1px var(--item-one),
+    -1px -2px 5px 1px var(--item-one),
+    -5px -2px 8px 10px var(--item-four);/*#270a49*/
+}
+
+.dial-mouse-down{
+    box-shadow: -1px -2px 2px 2px var(--dial-one) inset,/*#2e1052*/
+    0px 3px 3px 1px var(--dial-two) inset;/*#19072e*/
+}
+
+.swatch-mouse-down{
+    box-shadow: -1px -1px 2px 1px var(--swatch-one) inset,/*#3b1669*/
+    0px 0px 0px 0px var(--swatch-two) inset,/*#2e1052*/
+    0px 0px 0px 0px var(--swatch-one) inset,/*#3b1669*/
+    0px 1px 2px 4px var(--swatch-four),/*#130422*/
+    -2px 0px 4px 6px var(--swatch-two);/*#2e1052*/
+}
+
+/* .dial:hover{
+    box-shadow: 0px 3px 3px 1px #19072e inset,
+    -1px -2px 2px 2px #2e1052 inset;
+}
+
+.test-item:hover{
+    box-shadow: 0px 0px 20px 1px #000 inset,
+    1px 2px 5px 1px #000,
+    -1px -2px 5px 1px #000,
+    -5px -2px 8px 10px #270a49;
+} */
+/* .dial:hover > .swatch{
+    box-shadow: -1px -1px 2px 1px #3b1669 inset,
+    0px 0px 0px 0px #2e1052 inset,
+    0px 0px 0px 0px #3b1669 inset,
+    0px 1px 2px 4px #130422,
+    -2px 0px 4px 6px #2e1052;
+} */
+
+@media screen and (max-width: 770px) and (min-width: 500px) {
+    .component-container{
+        top:95%;
+        left:97%;
+        /* border:1px solid black; */
+    }
+    .dial-text{
+        top:90%;
+        left:92.5%;
+        /* border:1px solid black; */
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .component-container{
+        top:80%;
+        left:80%;
+        /* border:1px solid black; */
+    }
+    .dial-text{
+        top:75%;
+        left:72.5%;
+        /* border:1px solid yellow; */
+    }
+}

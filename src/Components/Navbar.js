@@ -53,10 +53,10 @@ function Navbar()
     return(
         <>
             <ul className='navbar-ul' style={{'width':window.innerwidth}}>
-                <li onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>{onMouseLeave(1)}} className='navbar-li'><Link style={linkStyles} to='/'>Home</Link></li>
-                <li onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>{onMouseLeave(2)}} className='navbar-li'><a className='link' href='/#skills'>Skills</a></li>
-                <li onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>{onMouseLeave(3)}} className='navbar-li'><Link style={linkStyles} to='/contact'>Contact</Link></li>
-                <li onMouseEnter={()=>onMouseEnter(4)} onMouseLeave={()=>{onMouseLeave(4)}} className='navbar-li'><a style={{ 'color' : 'rgb(41, 211, 98)','textDecoration': 'none','fontWeight':'700'}} className="res-link" href={Resume} download="Resume_mohit" target="_blank">Resume</a></li>
+                <li onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>{onMouseLeave(1)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/'>Home</Link></li>
+                <li onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>{onMouseLeave(2)}} className='navbar-li'><a className='link token-link' href='/#skills'>Skills</a></li>
+                <li onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>{onMouseLeave(3)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/contact'>Contact</Link></li>
+                <li onMouseEnter={()=>onMouseEnter(4)} onMouseLeave={()=>{onMouseLeave(4)}} className='navbar-li'><a style={{ 'color' : 'rgb(41, 211, 98)','textDecoration': 'none','fontWeight':'700'}} className="res-link token-link" href={Resume} download="Resume_mohit" target="_blank">Resume</a></li>
             </ul>
             <svg>
                 <defs>

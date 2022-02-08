@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root{
+    --name-two:rgb(44, 12, 80); /*+14,+4,+24 30 8 56*/
+    --info-start:greenyellow;
+    --info-desc:#777;
+}
+
 .container{
     width:60em;
     height:41em;
@@ -39,7 +45,7 @@
 
 
 .info-start{
-    color:greenyellow;
+    color:var(--info-start);
     margin-bottom: 1em;
     font-size:1.5em;
 }
@@ -50,7 +56,7 @@
     /* border:1px solid yellow; */
     padding: 0.5em 1em 0.5em 1em;
     box-shadow:#000 0px 0px 0px 0px inset,
-    #2c0c50 -6px -5px 12px 5px,
+    var(--name-two) -6px -5px 12px 5px,/*#2c0c50*/
     #001 4px 4px 16px 4px;
     transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 1.045);
     background-image: url('./../imgs/home/bg-sakura.jpg');
@@ -62,7 +68,7 @@
 
 .info-name:hover{
     box-shadow:#001 -6px 6px 12px 1px inset,
-    #2c0c50 -6px 4px 12px 3px,
+    var(--name-two) -6px 4px 12px 3px,/*#2c0c50*/
     #000 0px 0px 0px 0px;
     color:tomato;
 }
@@ -80,6 +86,7 @@
     margin-top:1em;
     font-size:1.2em;
     position: absolute;
+    color:var(--info-desc);
 }
 
 .info-desc:after{
@@ -248,7 +255,7 @@
     color:rgb(255, 141, 47);
     /* box-shadow:-4px -1px 8px 0px #2c0c50,
     10px 10px 6px 0px rgb(0, 0, 0); */
-    box-shadow:-6px -4px 15px 3px #2c0c50,
+    box-shadow:-6px -4px 15px 3px var(--name-two),/*#2c0c50*/
     6px 6px 10px 5px rgb(15, 15, 15);
     display:flex;
     align-items: center;

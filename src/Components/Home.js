@@ -21,24 +21,80 @@ import cpp from './../imgs/social/cpp.png'
 import csharp from './../imgs/social/csharp.png'
 
 import Loader from './Loader'
-import { useState } from 'react'
+import HomeComponent from './test/HomeComponent'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 function Home()
 {
+    
     const loadingTime = Math.random()*6000
     const [loading,setLoading] = useState(true)
-    const id = setTimeout(()=>{
+    let id
+    const timeId = setTimeout(()=>{
         setLoading(false)
-        clearTimeout(id)
+        clearTimeout(timeId)
     },loadingTime)
-    window.addEventListener('DOMContentLoaded',initialTimeout)
+    const history = useLocation()
+    useEffect(()=>{
+        let pathname =history.pathname.split('/').pop()        
+        
+        // setPath(pathname)
+        // console.log(pathname,path)
+        // console.log(pathname,path)
+        document.documentElement.style.setProperty('--social-filter','1')
+        document.documentElement.style.setProperty('--social-filter-hover','0.6')
+        setTimeout(runDefault,loadingTime+100)
+        function runDefault(){
+            if(!(pathname === 'contact')){
+                // console.log('here')
+                // document.documentElement.style.setProperty('--social-filter','0')
+                const body = document.querySelector('body')
+                const dial = document.querySelector('.dial')
+                const swatch = document.querySelector('.swatch')
+                dial.style.background = 'rgb(30,8,56)'
+                swatch.style.background = 'rgb(30,8,56)'
+                body.style.background = `#1e0838`
+                document.documentElement.style.setProperty('--dial-one',`rgb(${46},${16},${82})`)
+                document.documentElement.style.setProperty('--dial-two',`rgb(${25},${7},${46})`)
+                document.documentElement.style.setProperty('--item-one',`rgb(${0},${0},${0})`)
+                document.documentElement.style.setProperty('--item-four',`rgb(${39},${10},${73})`)
+                document.documentElement.style.setProperty('--swatch-one',`rgb(${59},${22},${105})`)
+                document.documentElement.style.setProperty('--swatch-two',`rgb(${46},${16},${82})`)
+                document.documentElement.style.setProperty('--swatch-four',`rgb(${19},${4},${34})`)
+                document.documentElement.style.setProperty('--swatch-bg',`rgb(${30},${8},${56})`)
+                document.documentElement.style.setProperty('--swatch-1',`rgb(${0},${0},${0})`)
+                document.documentElement.style.setProperty('--name-two',`rgb(${44},${12},${80})`)
+                document.documentElement.style.setProperty('--info-start','greenyellow')
+                document.documentElement.style.setProperty('--info-desc','#777')
+            }
+        }
+        
+            
+        
+        return ()=>{clearTimeout(id)}
+    },[history])
+    // window.addEventListener('DOMContentLoaded',initialTimeout)
+    let testId
+    let test2Id
+    // const [p,setP] = useState() //path
+    useEffect(()=>{
+        let pathname =window.location
+        // setP(pathname.pathname)
+        // if(pathname === '' || )
+        // console.log(pathname)
+     if(pathname.hash !== '#skills')testId = setTimeout(initialTimeout,1000)
+     return()=>{clearTimeout(id)}
+    },[])
     function initialTimeout(){
-        setTimeout(onDOMContentLoaded,loadingTime+100)
+        clearTimeout(testId)
+        test2Id = setTimeout(onDOMContentLoaded,loadingTime+100)
+        // console.log('dom loaded')
     }
     function onDOMContentLoaded(){
         //social icon pathname
         
-        
+        clearTimeout(test2Id)
         //secondarycursor
         const mouse = {x:0,y:0}
         const cursor = document.querySelector('.secondary-cursor')
@@ -69,7 +125,7 @@ function Home()
         let time = 1000
         let letterId
         let isRunning = false
-        const id = setInterval(()=>{
+        id = setInterval(()=>{
             //clearInterval(letterId)
             if(!isRunning){
                 info.innerHTML=''
@@ -89,7 +145,7 @@ function Home()
                         //console.log('here because',count,'=',letters.length)
                         clearInterval(letterId)
                     }
-                    if(count < letters.length)info.innerHTML+=letters[count]
+                    if(count < letters.length && info)info.innerHTML+=letters[count]
                     count++
                 },300*Math.random()+50)
                 count = 0
@@ -181,6 +237,7 @@ function Home()
         {loading?<Loader/>
             :(
             <>
+        <HomeComponent />
         <div className='container'>
             <div className='info'>
                 <p className='info-start'>Hi, I am</p>

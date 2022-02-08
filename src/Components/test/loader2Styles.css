@@ -1,0 +1,54 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.loader2-container{
+    width:10em;
+    height:10em;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    /* border:1px solid yellow; */
+}
+
+.loader2-container:after{
+    position: absolute;
+    left:0em;
+    content:'.m';
+    width:10%;
+    height: 100%;
+    /* border:1px solid green; */
+    font-size: 8em;
+    text-align: center;
+    animation:loader2-anim 3s linear infinite alternate;
+}
+
+.loader2-container:before{
+    position: absolute;
+    content:'';
+    width:100%;
+    
+    border-bottom:3px solid hotpink;
+    border-radius: 3em;
+    top:100%;
+    left:0em;
+    text-align: center;
+    animation:loading-bar-anim 3s infinite ease-in-out alternate;   
+}
+
+@keyframes loading-bar-anim{
+    from{width:1%;}
+    to{width:250%;}
+}
+
+@keyframes loader2-anim{
+    0%{content:'.';}
+    30%{content:'.m';}
+    45%{content:'.mo';}
+    65%{content:'.moh';}
+    80%{content:'.mohi';}
+    100%{content:'.mohit';}
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import {send} from 'emailjs-com'
 import Loader from './Loader'
@@ -7,6 +7,9 @@ import './contactStyles.css'
 
 function Contact()
 {
+    useEffect(()=>{
+        return()=>{}
+    })
     const [loading,setLoading] = useState(true)
     const id = setTimeout(()=>{
         setLoading(false)
@@ -38,9 +41,11 @@ function Contact()
             },2000)
         })
         .catch((err)=>{
-            console.log('Could not send.', err )
             setPoplv(false)
             setPopfv(true)
+            console.log('Could not send.', err )
+            
+            
             const id = setTimeout(()=>{
                 setPopfv((prevState)=>!prevState)
                 clearTimeout(id)
@@ -74,13 +79,15 @@ function Contact()
             },2000)
         })
         .catch((err)=>{
-            console.log('Could not send.', err )
-            setPoplv(false)
-            setPopfv(true)
             const id = setTimeout(()=>{
                 setPopfv((prevState)=>!prevState)
                 clearTimeout(id)
             },3000)
+            setPoplv(false)
+            setPopfv(true)
+            console.log('Could not send.', err )
+            
+            
         })
     }
 

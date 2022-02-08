@@ -8,6 +8,7 @@
     --social-op-email:0;
     --social-op-phone:0;
     --social--filter:1;
+    --social-filter-hover:0.5;
     --social-arrow-dir:-1;
     /* --social-content-phone:'lol...no.' */
 }
@@ -100,7 +101,7 @@
 }
 
 .logo:hover{
-    filter:invert(0.5) contrast(2);
+    filter:invert(var(--social-filter-hover)) contrast(2);
     
     
     transform: translateX(1em);
