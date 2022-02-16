@@ -28,7 +28,9 @@ html::-webkit-scrollbar-corner{
   background: rgba(255,255,255,0.5);
 }
 
-
+:root{
+  --global-bg:#1e0838;
+}
 
 body {
   margin: 0;

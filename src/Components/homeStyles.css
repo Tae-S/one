@@ -94,6 +94,8 @@
     position: absolute;
     top:45em;
     text-align: center;
+    padding-bottom:20em;
+    /* border:1px solid blue; */
 }
 
 .skills-container{
@@ -274,11 +276,14 @@
 
 @media screen and (max-width: 770px) and (min-width: 500px) {
     .container{
-        left: -1em;
-        top:-15em;
+        left: -7em;
+        top:-30em;
     }
     .message-box{
-        left:5em;
+        left:8em;
+    }
+    .skills-title{
+        margin-left:1.5em;
     }
 }
 
@@ -288,10 +293,14 @@
         width:45em;
         transform:scale(0.5);
         /* border:1px solid yellow; */
-        left:-10em;
+        left:-12em;
+        top:-15em;
     }
 
     .message-box{
-        left:5em;
+        left:9em;
+    }
+    .skills-title{
+        margin-left:5em;
     }
 }

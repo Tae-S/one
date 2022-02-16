@@ -13,7 +13,8 @@ function Social()
     function handleScroll(){
         const socialContainer = document.querySelector('.social-container')
         const socialArrow = document.querySelector('.social-arrow')
-        if(window.scrollY > 2){
+        // console.log(window.scrollY)
+        if(window.scrollY > 0){
             // console.log('here')
             
 
@@ -32,6 +33,7 @@ function Social()
             document.documentElement.style.setProperty('--social-arrow-dir','-1')
         }
     }
+    window.addEventListener('scroll',handleScroll)
     if(window.matchMedia("(any-pointer: coarse)").matches) {
         console.log('touch device')
     }else{

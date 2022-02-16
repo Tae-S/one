@@ -12,6 +12,19 @@
     flex-direction: row;
     justify-content: space-evenly;
     z-index:22;
+    /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 770px) and (min-width: 500px) {
+    .navbar-ul{
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .navbar-ul{
+        width:100%;
+    }
 }
 
 .navbar-li{

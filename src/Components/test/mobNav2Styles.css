@@ -1,0 +1,205 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --slider-x: 5.8em;
+}
+
+.mob-nav-container{
+    /* border:1px solid red; */
+    height:6.8em;
+    overflow:visible;
+    position:fixed;
+    left:50%;
+    bottom:1%;
+    transform: translate(-50%);
+    
+    width:50em;
+    border-radius: 5em;
+    /* background-color:skyblue; */
+    background:greenyellow;
+    /* perspective:800px;
+    perspective-origin: 0%;
+    transform-style: preserve-3d; */
+    z-index:25;
+}
+
+.mob-navbar-ul{
+    position:fixed;
+    left:50%;
+    bottom:2%;
+    transform: translate(-50%);
+    width:50em;
+    display: flex;
+    justify-content: space-evenly;
+    /* border:1px solid yellow; */
+    padding:1em 1em;
+    
+}
+
+.mob-navbar-li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid yellow; */
+    padding:0.5em 0.5em;
+    letter-spacing: 0.1em;
+    /* filter:url(#mob-nav-filter); */
+    color:rgb(248, 90, 62);
+}
+
+.mob-navbar-li-anim{
+    animation: mob-li-anim 1.5s infinite alternate linear;
+}
+
+@keyframes mob-li-anim{
+    0%{filter:url(#mob-nav-filter0);}
+    20%{filter:url(#mob-nav-filter1);}
+    35%{filter:url(#mob-nav-filter2);}
+    50%{filter:url(#mob-nav-filter3);}
+    65%{filter:url(#mob-nav-filter4);}
+    75%{filter:url(#mob-nav-filter5);}
+    85%{filter:url(#mob-nav-filter6);}
+    100%{filter:url(#mob-nav-filter7);}
+}
+
+.mob-token-link{
+    /* color:rgb(41, 211, 98); */
+    color:rgb(248, 90, 62);
+    text-decoration:none;
+    font-weight: 700;
+    transition: all 0.35s ease-in;
+    font-size: 1.2rem;
+}
+
+.mob-hide{
+    opacity:0;
+}
+
+.mob-navbar-li span{
+    z-index:35;
+}
+
+.mob-navbar-li ion-icon{
+    color:var(--icon2-color);
+    font-size: 2em;
+    margin-bottom: 0.1em;
+    transform: translateY(var(--icon2-y));
+    transition:all 0.35s ease-in;
+    
+}
+
+/* .mob-slider{
+    width:6em;
+    height:6em;
+    background-color:greenyellow;
+    border-radius: 50%;
+    position:relative;
+    left:var(--slider-x);
+    transition: all 0.5s ease-out;
+    top:-4.5em;
+    border:8px solid var(--global-bg); */
+    /* filter:url(#mob-nav-filter); */
+    /* animation: mob-slider-anim 0.5s linear alternate infinite; */
+    /* transform-style: preserve-3d; */
+/* } */
+
+.mob-slider{
+    width:6em;
+    height:6em;
+    background-color:greenyellow;
+    border-radius: 50%;
+    position:relative;
+    left:var(--slider-x);
+    transition: all 0.5s ease-out;
+    top:-2.5em;
+    border:8px solid greenyellow;
+}
+.mob-slider:before{
+    content:'';
+    position: absolute;
+    width:3em;
+    height:3em;
+    /* background:greenyellow; */
+    border-radius: 50%;
+    bottom:2.9em;
+    left:-3.1em;
+    /* box-shadow:15px 13px 0 0 greenyellow; */
+    box-shadow:20px 20px 0 0 greenyellow;
+    transform:rotate(16deg);
+}
+.mob-slider:after{
+    content:'';
+    position: absolute;
+    width:3em;
+    height:3em;
+    /* background:red; */
+    border-radius: 50%;
+    bottom:2.9em;
+    right:-3.1em;
+    box-shadow:-20px 20px 0 0 greenyellow;
+    transform:rotate(-16deg);
+}
+
+
+/* @keyframes mob-slider-anim{
+    0%{transform: scale(1);border-width:10px ;}
+    100%{transform: scale(0.98);}
+} */
+
+/* @keyframes mob-slider-anim{
+    0%{transform: translateZ(1em);}
+    100%{transform: translateZ(2em);}
+} */
+
+
+/* .mob-slider:before{
+    content:'';
+    position: absolute;
+    width:2.1em;
+    height:2.1em;
+ 
+    border-top-right-radius:1.8em;
+    bottom:-0.89em;
+    left:-1.45em;
+    box-shadow:1px -13px 0 0 var(--global-bg);
+    transform:rotate(-12deg);
+} */
+
+/* .mob-slider:after{
+    content:'';
+    position: absolute;
+    width:0.3em;
+    height:3em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
+ 
+    bottom:0.97em;
+    right:-0.2em;
+    box-shadow:0 1.2em 0 0 var(--global-bg);
+    transform:rotate(4deg);
+} */
+
+@media screen and (max-width: 499px) {
+    .mob-nav-container{
+        
+        top:2em;
+        width:800px;
+        left:0%;
+        transform: translate(-25%) scale(0.6);
+    }
+}
+@media screen and (max-width: 770px) and (min-width: 500px) {
+    .mob-nav-container{
+        
+        top:2em;
+        width:800px;
+        left:0%;
+        transform: translate(-25%) scale(0.6);
+    }
+}

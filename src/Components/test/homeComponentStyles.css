@@ -28,7 +28,12 @@
     transform: translate(-50%,-50%);
     /* border:1px solid yellow; */
     z-index:5;
-    
+    background: transparent;   
+}
+
+.component-container::selection{
+    color:none;
+    background-color: none;
 }
 
 
@@ -86,6 +91,7 @@
     top:70%;
     left:88.125%;
     z-index:30;
+    background:transparent;
     font-size:1.2em;
     transform:translate(0%,5%);
     cursor:pointer;
@@ -163,23 +169,36 @@
         top:95%;
         left:97%;
         /* border:1px solid black; */
+        -webkit-tap-highlight-color: transparent;
     }
     .dial-text{
         top:90%;
         left:92.5%;
         /* border:1px solid black; */
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
 @media screen and (max-width: 499px) {
     .component-container{
-        top:60%;
-        left:80%;
+        top:45%;
+        left:55%;
         /* border:1px solid black; */
+        transform:scale(0.7);
+        /* cursor:none; */
+        -webkit-tap-highlight-color: transparent;
+
     }
     .dial-text{
-        top:55%;
-        left:73.5%;
+        top:53%;
+        left:70%;
         /* border:1px solid yellow; */
+        transform:scale(0.9);
+        /* cursor:none; */
+        -webkit-tap-highlight-color: transparent;
     }
+    /* *{
+        cursor:none;
+        -webkit-tap-highlight-color: transparent;
+    } */
 }

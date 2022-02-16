@@ -1,9 +1,17 @@
 import './navbarStyles.css'
 import {Link} from 'react-router-dom'
 import Resume from '../Resume.pdf'
+import { useEffect, useState } from 'react'
+import MobNav2 from './test/MobNav2'
 
 function Navbar()
 {
+    
+    const [isMob,setMob] = useState(false)
+    useEffect(()=>{
+        if(window.matchMedia("(any-pointer: coarse)").matches) setMob(true)
+    },[])
+    
 
     const linkStyles = {
         'textDecoration':'none',
@@ -52,41 +60,45 @@ function Navbar()
     }
     return(
         <>
-            <ul className='navbar-ul' style={{'width':window.innerwidth}}>
-                <li onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>{onMouseLeave(1)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/'>Home</Link></li>
-                <li onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>{onMouseLeave(2)}} className='navbar-li'><a className='link token-link' href='/#skills'>Skills</a></li>
-                <li onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>{onMouseLeave(3)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/contact'>Contact</Link></li>
-                <li onMouseEnter={()=>onMouseEnter(4)} onMouseLeave={()=>{onMouseLeave(4)}} className='navbar-li'><a style={{ 'color' : 'rgb(41, 211, 98)','textDecoration': 'none','fontWeight':'700'}} className="res-link token-link" href={Resume} download="Resume_mohit" target="_blank">Resume</a></li>
-            </ul>
-            <svg>
-                <defs>
-                    <filter id='squiggle1'>
-                        <feTurbulence baseFrequency='0.9' type='turbulence' numOctaves='2' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                    <filter id='squiggle2'>
-                        <feTurbulence baseFrequency='0.01' type='turbulence' numOctaves='2' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                    <filter id='squiggle3'>
-                        <feTurbulence baseFrequency='0.005' type='turbulence' numOctaves='2' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                    <filter id='squiggle4'>
-                        <feTurbulence baseFrequency='0.2' type='turbulence' numOctaves='2' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                    <filter id='squiggle5'>
-                        <feTurbulence baseFrequency='0.02' type='turbulence' numOctaves='2' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                    <filter id='squiggle6'>
-                        <feTurbulence baseFrequency='0.5' type='turbulence' numOctaves='3' result='turbulence'/>
-                        <feDisplacementMap in2='turblence' in='SourceGraphic' scale='1' xChannelSelector='R' yChannelSelector='G'/>
-                    </filter>
-                </defs>
-            </svg>
-        </>
+        {isMob?<MobNav2/>
+            :(
+            <>
+                <ul className='navbar-ul' style={{'width':window.innerwidth}}>
+                    <li onMouseEnter={()=>onMouseEnter(1)} onMouseLeave={()=>{onMouseLeave(1)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/'>Home</Link></li>
+                    <li onMouseEnter={()=>onMouseEnter(2)} onMouseLeave={()=>{onMouseLeave(2)}} className='navbar-li'><a className='link token-link' href='/#skills'>Skills</a></li>
+                    <li onMouseEnter={()=>onMouseEnter(3)} onMouseLeave={()=>{onMouseLeave(3)}} className='navbar-li'><Link className='token-link' style={linkStyles} to='/contact'>Contact</Link></li>
+                    <li onMouseEnter={()=>onMouseEnter(4)} onMouseLeave={()=>{onMouseLeave(4)}} className='navbar-li'><a style={{ 'color' : 'rgb(41, 211, 98)','textDecoration': 'none','fontWeight':'700'}} className="res-link token-link" href={Resume} download="Resume_mohit" target="_blank">Resume</a></li>
+                </ul>
+                <svg>
+                    <defs>
+                        <filter id='squiggle1'>
+                            <feTurbulence baseFrequency='0.9' type='turbulence' numOctaves='2' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                        <filter id='squiggle2'>
+                            <feTurbulence baseFrequency='0.01' type='turbulence' numOctaves='2' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                        <filter id='squiggle3'>
+                            <feTurbulence baseFrequency='0.005' type='turbulence' numOctaves='2' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                        <filter id='squiggle4'>
+                            <feTurbulence baseFrequency='0.2' type='turbulence' numOctaves='2' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                        <filter id='squiggle5'>
+                            <feTurbulence baseFrequency='0.02' type='turbulence' numOctaves='2' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='5' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                        <filter id='squiggle6'>
+                            <feTurbulence baseFrequency='0.5' type='turbulence' numOctaves='3' result='turbulence'/>
+                            <feDisplacementMap in2='turblence' in='SourceGraphic' scale='1' xChannelSelector='R' yChannelSelector='G'/>
+                        </filter>
+                    </defs>
+                </svg>
+            </>
+        )}</>
     )
 }
 

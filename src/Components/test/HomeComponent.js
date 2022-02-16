@@ -122,6 +122,7 @@ function HomeComponent()
             const g = Math.floor(((oldAngle-120) + (Math.random()-0.5)*120))
             const b = Math.floor(((oldAngle-120) + (Math.random()-0.5)*120))
             body.style.background = `rgb(${r},${g},${b})`
+            document.documentElement.style.setProperty('--global-bg',`rgb(${r},${g},${b})`)
             dial.style.background = `rgb(${r},${g},${b})`//+16 +8 26
             swatch.style.background = `rgb(${r},${g},${b})`//+16 +8 26
             document.documentElement.style.setProperty('--dial-one',`rgb(${r+16},${g+8},${b+26})`)
@@ -170,6 +171,7 @@ function HomeComponent()
             const b = Math.floor(((120-oldAngle) - (Math.random())*120))
             // console.log(r,g,b)
             body.style.background = `rgb(${r},${g},${b})`
+            document.documentElement.style.setProperty('--global-bg',`rgb(${r},${g},${b})`)
             dial.style.background = `rgb(${r},${g},${b})`//+16 +8 26
             swatch.style.background = `rgb(${r},${g},${b})`//+16 +8 26
             document.documentElement.style.setProperty('--dial-one',`rgb(${r+16},${g+8},${b+26})`)
