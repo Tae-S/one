@@ -3,3 +3,177 @@
     margin:0;
     box-sizing: border-box;
 }
+
+:root{
+    --loader-3-height: 12em;
+}
+
+.loader3-container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:var(--loader-3-height);
+    height:var(--loader-3-height);
+    /* border:1px solid yellow; */
+    border-radius: 50%;
+    filter:url(#loader3-filter);
+    animation:static-container-anim 6s infinite forwards;
+}
+
+@keyframes static-container-anim{
+    
+    85%{transform:translate(-50%,-50%) rotate(calc(-1.2 * 360deg));}
+    100%{transform:translate(-50%,-50%) rotate(calc(-1 * 360deg));}
+}
+
+.loader3-item{
+    display: block;
+    width:100%;
+    height:100%;
+    /* border-radius: 50%; */
+    /* background-color: aqua; */
+    position:absolute;
+    /* border:1px solid yellow; */
+    transform: rotate(calc(-45deg * var(--loader3-i)));
+    
+    
+}
+
+.loader3-item:before{
+    content:'';
+    position:absolute;
+    
+    width:3em;
+    height:3em;
+    border-radius: 50%;
+    background:linear-gradient(30deg, #f5c133,rgb(240, 122, 54))
+    
+}
+
+.loader3-item:nth-child(1):before{
+    /* background:red; */
+    opacity:1;
+}
+
+.static{
+    --static:360deg;
+    /* animation: static-anim 6s infinite linear forwards; */
+}
+
+.static1{
+    --static: -360deg;
+   
+}
+.static2{
+    --static: -405deg;
+   
+}
+.static3{
+    --static: -450deg;
+   
+}
+.static4{
+    --static: -495deg;
+   
+}
+.static5{
+    --static: -540deg;
+   
+}
+.static6{
+    --static: -585deg;
+   
+}
+.static7{
+    --static: -630deg;
+   
+}
+.static8{
+    --static: -675deg;
+   
+}
+
+@keyframes static-anim{
+    0%{transform: rotate(calc(var(--loader3-i) * 45deg ));}
+    /* 75%{transform:rotate(calc(-0.92 * var(--static)));} */
+    100%{transform:rotate(calc(1 * var(--static)));}
+    /* 100%{transform:rotate(1turn);} */
+}
+
+/* @keyframes static-anim1{
+    0%{transform: rotate(0deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim2{
+    0%{transform: rotate(-45deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim3{
+    0%{transform: rotate(-90deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim4{
+    0%{transform: rotate(-135deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim5{
+    0%{transform: rotate(-180deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim6{
+    0%{transform: rotate(-225deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim7{
+    0%{transform: rotate(-270deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+}
+@keyframes static-anim8{
+    0%{transform: rotate(-315deg);}
+    75%{transform:rotate(calc(-0.92 * var(--static)));}
+    100%{transform:rotate(calc(-1 * var(--static)));}
+} */
+
+.rotate{
+    width: var(--loader-3-height);
+    height: var(--loader-3-height);
+    position: absolute;
+    top:calc(50% - 6em);
+    /* top:0; */
+    left:calc(50% - 6em);
+    /* filter:url(#loader3-filter); */
+    /* background:tomato;     */ /*CONCEPT blob! */
+    animation:rotate-anim 3s ease-in-out infinite forwards;
+}
+
+.rotate1{
+    animation-delay: 0s;
+}
+.rotate2{
+    animation-delay: 0.15s;
+}
+.rotate3{
+    animation-delay: 0.3s;
+}
+.rotate4{
+    animation-delay: 0.45s;
+}
+.rotate5{
+    animation-delay: 0.6s;
+}
+.rotate6{
+    animation-delay: 0.75s;
+}
+@keyframes rotate-anim{
+    from{transform: rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+

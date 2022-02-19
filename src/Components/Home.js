@@ -8,6 +8,11 @@ import css from './../imgs/social/css3.png'
 import reactjs from './../imgs/social/reactjs.png'
 import sass from './../imgs/social/sass.png'
 import threejs from './../imgs/social/threejs.png'
+import graphql from './../imgs/social/graphql.png'
+import apollo from './../imgs/social/apollo.png'
+import puppeteer from './../imgs/social/puppeteer.png'
+import reactNative from './../imgs/social/react-native.png'
+import kotlin from './../imgs/social/kotlin.png'
 import figma from './../imgs/social/figma-two.png'
 import ps from './../imgs/social/ps.png'
 import ai from './../imgs/social/ai.png'
@@ -19,11 +24,13 @@ import numpy from './../imgs/social/numpy.png'
 import python from './../imgs/social/python.png'
 import cpp from './../imgs/social/cpp.png'
 import csharp from './../imgs/social/csharp.png'
+import firebase from './../imgs/social/firebase.png'
+import gcp from './../imgs/social/gcp.png'
 
 import Loader from './Loader'
 import HomeComponent from './test/HomeComponent'
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Home()
 {
@@ -197,6 +204,21 @@ function Home()
             case 'threejs':
                 messageBox.innerHTML = 'Threejs and WebGL shaders'
                 break
+            case 'graphql':
+                messageBox.innerHTML = 'GraphQL as a query language'
+                break
+            case 'apollo':
+                messageBox.innerHTML = 'Apllo-server both v2(for file Uploads) and v3'
+                break
+            case 'reactNative':
+                messageBox.innerHTML = 'Learning native programming concepts in react-native'
+                break
+            case 'puppeteer':
+                messageBox.innerHTML = 'Web scraping and crawling with Cheerio and PuppeteerJS(headless browser)'
+                break
+            case 'kotlin':
+                messageBox.innerHTML = 'Kotlin: Just getting started'
+                break
             case 'git':
                 messageBox.innerHTML = 'Git version control'
                 break
@@ -220,6 +242,12 @@ function Home()
                 break
             case 'csharp':
                 messageBox.innerHTML = 'C#'
+                break
+            case 'gcp':
+                messageBox.innerHTML = 'Google Cloud Platform and Cloud Function basics'
+                break
+            case 'firebase':
+                messageBox.innerHTML = 'FireBase for deployment and FireBase Tools'
                 break
             default:
                 console.log('boo')
@@ -270,6 +298,12 @@ function Home()
                                 <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('mongodb')}} className='skill-logo mongodb' src={mongodb}/></div>
                                 <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('mysql')}} className='skill-logo mysql' src={mysql}/></div>
                                 <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('threejs')}} className='skill-logo threejs' src={threejs}/></div>
+                                <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('graphql')}} className='skill-logo graphql' src={graphql}/></div>
+                                <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('apollo')}} className='skill-logo apollo' src={apollo}/></div>
+                                <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('reactNative')}} className='skill-logo react-native' src={reactNative}/></div>
+                                <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('kotlin')}} className='skill-logo kotlin' src={kotlin}/></div>
+                                <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('puppeteer')}} className='skill-logo puppeteer' src={puppeteer}/></div>
+
                         </div>
                     </div>
                     <div className='misc-container'>
@@ -281,12 +315,15 @@ function Home()
                             <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('python')}} className='skill-logo python' src={python}/></div>
                             <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('numpy')}} className='skill-logo numpy' src={numpy}/></div>
                             <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('pandas')}} className='skill-logo pandas' src={pandas}/></div>
+                            <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('firebase')}} className='skill-logo firebase' src={firebase}/></div>
+                            <div><img onMouseLeave={()=>onMouseLeave()} onMouseEnter={()=>{onMouseEnter('gcp')}} className='skill-logo gcp' src={gcp}/></div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
         <div className='secondary-cursor'></div>
+        <Link to='/dev' className='to-dev-link'>Components in development</Link>
         <svg>
                 <defs>
                     <filter id='squiggley-cursor1'>

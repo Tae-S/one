@@ -1,3 +1,4 @@
+//TODO: better box-shadows for homeComponent
 // z-index of social-icons >=1
 // contact form height adjustment,px to em
 // homepage mediaqueries 50% remaining
@@ -12,12 +13,15 @@ import Home from './Components/Home'
 import Contact from './Components/Contact'
 
 //test
+import Dev from './Components/Dev'
 import Loader2 from './Components/test/Loader2'
 import HomeComponent from './Components/test/HomeComponent'
 import MobNav from './Components/test/MobNav'
 import MobNav2 from './Components/test/MobNav2'
 import MobNav3 from './Components/test/MobNav3'
 import Loader3 from './Components/test/Loader3'
+import Loader4 from './Components/test/Loader4'
+
 
 function App() {
   return (
@@ -29,9 +33,11 @@ function App() {
         <Route path='/loader' element={<Loader/>}/>
         <Route path='/loader2' element={<Loader2/>}/>
         <Route path='/loader3' element={<Loader3/>}/>
+        <Route path='/loader4' element={<Loader4/>}/>
         <Route path='/mobnav' element={<MobNav/>}/>
         <Route path='/mobnav2' element={<MobNav2/>}/>
         <Route path='/mobnav3' element={<MobNav3/>}/>
+        <Route path='/dev' element={<Dev/>}/>
         <Route path='/homecomponent' element={<HomeComponent/>}/>
         <Route path='/' element={<Home/>}/>
       </Routes>
